@@ -1,0 +1,51 @@
+Laboratório 1 - Docker (05/08/2026)
+
+1. docker run -it --rm (imagem)
+    -> -it: aloca um terminal virtual para vizualizar a linha de comando e mantém a entrada padrão aberta.
+    -> -rm: Remove automaticamente o container assim que ele for finalizado.
+
+2. docker images - Lista as imagens instaladas
+
+3. docker pull (imagem) - Trazer a imagem para a máquina
+
+4. docker search (imagem) - Procurar imagem
+
+5. cat /etc/os-release -> Retorna a imagem do PC
+
+6. apt: Busca o url dos pacotes para instalar
+    -> apt update: A imagem vem sem qualquer pacote, é preciso atualizar o apt para obter os urls.
+    -> apt-get install (pacote)
+    
+7. docker ps -> Vizualizar todos os conteiners ativos.
+
+8. Utilizar bash no final do run, força o docker a executar pela bash. É necessário que a imagem tenha o bash.
+
+9. docker run -it --rm -v $(pwd):/app (imagem)
+    -> -v: mapeamento de volume
+    -> $(pwd): passa o diretório atual (retorno do comando pwd)
+    -> :/app é o diretório criado 
+    
+    
+10.     
+Atividade em dupla com o monkey:
+
+IP: 172.18.219.84 (Igor)
+Protocolo: TCP
+
+Servidor:
+nc -l -p (porta)
+    -> -l indica que ele via ficar ouvindo.
+    -> -p Indica a porta
+    
+Cliente:
+nc (ip) (porta)
+
+Criando um servidor dentro de um conteiner:
+docker run -it --rm -p 1234:1234 ubuntu -> Para rodar o container com a porta mapeada
+    - (porta):(porta) para fazer o mapeamento de porta
+Dentro do container, rodar o comando do servidor: nc -l -p (porta)
+
+
+11. Criação de image: docker build -t (nome) (diretório)
+
+12. jwebserver -b 0.0.0.0 -> Abrir o html pelo diretório
