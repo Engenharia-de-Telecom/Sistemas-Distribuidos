@@ -4,7 +4,7 @@ import module java.base;
 
 public class App {
     public static void main(String[] args) {
-        String nomeArquivo = "/home/aluno/Downloads/slides.pdf";
+        String nomeArquivo = "/home/t/Documentos/Faculdade/6/STD/slides.pdf";
     try (var socket = new Socket("localhost", 1234);
         var dos = new DataOutputStream(socket.getOutputStream());
         var dis = new DataInputStream(socket.getInputStream())) {
